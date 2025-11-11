@@ -135,6 +135,9 @@ app.get("/api/sensors/analysis", async (req, res) => {
 
 // ---------- AUTO FETCH EVERY 1 MIN ----------
 setInterval(fetchAndStoreData, 60 * 1000);
+app.get("/", (req, res) => {
+  res.send("✅ Cold Storage Backend is running!");
+});
 
 // ---------- START SERVER ----------
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
